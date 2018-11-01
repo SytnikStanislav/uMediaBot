@@ -1,0 +1,31 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+version = '1.0'
+compileJava.options.encoding = 'UTF-8'
+
+run {
+    mainClassName = "kpi.telegram_bot.KPITelegramBot"
+//    manifest {
+//        attributes 'Main-Class': 'kpi.telegram_bot.KPITelegramBot'
+//    }
+}
+
+sourceSets {
+    main {
+        resources {
+            srcDirs = ['src/main/resources']
+        }
+    }
+}
+
+
+dependencies {
+    compile "org.telegram:telegrambots:+"
+//    compile 'log4j:log4j:+'
+}
+
+repositories {
+    mavenCentral()
+}
+
